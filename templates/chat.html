@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Add Material Icons for better symbols -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <h1>AI Assistant</h1>
+            <div class="header-controls">
+                <button onclick="showHistory()" class="history-toggle">
+                    <span class="material-icons">history</span>
+                    History
+                </button>
+
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <span class="material-icons">dark_mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Hello! How can I assist you today? 👋
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading" id="loading">
+            <span class="material-icons rotating">sync</span>
+            Assistant is thinking...
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <input 
+                type="text" 
+                id="user-input" 
+                placeholder="Type your message here..."
+                autocomplete="off"
+            >
+            <button onclick="sendMessage()" id="send-button">
+                <span class="material-icons">send</span>
+            </button>
+
+            <button onclick="clearChat()" class="clear-chat">
+                <span class="material-icons">delete_sweep</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat History Sidebar -->
+    <div class="history-sidebar" id="historySidebar">
+        <div class="history-header">
+            <h2>Chat History</h2>
+            <button onclick="hideHistory()">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div class="history-content" id="historyContent">
+            <!-- History items will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
